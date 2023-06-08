@@ -1,9 +1,9 @@
 import React from 'react'
 import Header from './header/Header'
 import Footer from '../footer/Footer'
+import Props from '../../types/Props'
 
-interface LayoutProps {
-    children: React.ReactNode
+interface LayoutProps extends Props {
 }
 
 const Layout = (props: LayoutProps) => {
