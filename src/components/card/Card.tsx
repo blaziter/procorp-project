@@ -16,23 +16,14 @@ const Card = (props: CardProps) => {
     const [seats, setSeats] = useState<Booking[]>([])
 
     const setSeat = (args: Booking) => {
-        let deleteElement = booked.find(deleted => args.flightId == deleted.flightId && deleted.seatId == args.seatId)
-        if (booked.find(deleted => args.flightId == deleted.flightId && deleted.seatId == args.seatId)) {
-            deleteSeat(deleteElement!)
+        if (booked.map(book => book.flightId === props.id && book.seatId === args.seatId).includes(true)) {
+            dispatch(removeSeat(args))
+            setSeats(seats.filter(seat => seat.seatId !== args.seatId))
         } else {
+            dispatch(addSeat(args))
             setSeats([...seats, args])
-            dispatch(addSeat([args]))
         }
     }
-
-    const deleteSeat = (args: Booking) => {
-        dispatch(removeSeat(args))
-        setSeats([...seats.filter(seat => args.flightId !== seat.flightId && args.seatId !== seat.seatId)])
-    }
-
-    useEffect(() => {
-        console.log(booked)
-    }, [])
 
     return (
         <>
@@ -56,7 +47,7 @@ const Card = (props: CardProps) => {
                                             name={seat.number}
                                             className='mr-2 w-10 h-10 accent-cyan-500 checked:text-blue:500 hover:cursor-pointer disabled:cursor-default'
                                             disabled={seat.available}
-                                            checked={booked.map(book => book.flightId === props.id && book.seatId === seat.id).includes(true) ? true : seat.available ? true : undefined}
+                                            defaultChecked={booked.map(book => book.flightId === props.id && book.seatId === seat.id).includes(true) ? true : seat.available ? true : undefined}
                                         />
                                     </div>
                                 )

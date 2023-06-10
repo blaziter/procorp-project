@@ -1,0 +1,30 @@
+.input-animation {
+    animation: 0.8s text-field-animate-in backwards;
+}
+
+.login-input {
+    animation: 0.8s text-field-text-animate-in forwards;
+}
+
+.login-placeholder {
+    transition: all 0.25s;
+}
+
+.login-input:focus + .login-placeholder, .login--non-empty + .login-placeholder {
+    opacity: 0;
+    transform: scale(0.75);
+}
+
+.login-title {
+    transition: all 0.25s;
+}
+
+.login-input ~ .login-title {
+    opacity: 0;
+}
+
+.login-input:focus ~ .login-title, .login--non-empty ~ .login-title {
+    opacity: 1;
+    transform: scale(1);
+}
+

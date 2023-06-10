@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import Container from '../components/container/Container'
+import Container from '../container/Container'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
-import { useAppSelector } from '../app/hooks'
+import { useAppSelector } from '../../app/hooks'
 
 const Header = () => {
   const booking = useAppSelector((state) => state.booking.seats)
+  const username = useAppSelector((state) => state.auth.username)
 
   useEffect(() => {
 
@@ -36,9 +37,17 @@ const Header = () => {
               <Link to='/cart' className='flex flex-row items-center text-sm font-semibold leading-6 text-gray-900'>
                 {booking.length} <AiOutlineShoppingCart size={'1.5em'} />
               </Link>
-              <Link to='/login' className='text-sm font-semibold leading-6 text-gray-900'>
-                Login
-              </Link>
+              {
+                username ? (
+                  <Link to='/user' className='text-sm font-semibold leading-6 text-gray-900'>
+                    {username}
+                  </Link>
+                ) : (
+                  <Link to='/login' className='text-sm font-semibold leading-6 text-gray-900'>
+                    Login
+                  </Link>
+                )
+              }
             </div>
           </nav>
         </Container>
