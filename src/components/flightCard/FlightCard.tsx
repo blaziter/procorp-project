@@ -10,7 +10,7 @@ import Booking from '../../types/Booking'
 
 type CardProps = Omit<FlightsProps, 'children'>
 
-const Card = (props: CardProps) => {
+const FlightCard = (props: CardProps) => {
     const dispatch = useAppDispatch()
     const booked = useAppSelector((state) => state.booking.seats)
     const [seats, setSeats] = useState<Booking[]>([])
@@ -82,4 +82,4 @@ const Card = (props: CardProps) => {
     )
 }
 
-export default Card
+export default FlightCard

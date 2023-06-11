@@ -1,8 +1,13 @@
 import React from 'react'
+import Container from '../components/container/Container'
 
 const BookingPage = () => {
   return (
-    <div>BookingPage</div>
+    <>
+        <Container className='mx-auto'>
+            
+        </Container>
+    </>
   )
 }
 

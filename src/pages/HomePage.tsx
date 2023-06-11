@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-import Card from '../components/flightCard/FlightCard'
 import Container from '../components/container/Container'
 import { useAppSelector, useAppDispatch } from '../app/hooks'
 import { takeSeat } from '../features/flightSlice'
+import FlightCard from '../components/flightCard/FlightCard'
 
 const HomePage = () => {
     const dispatch = useAppDispatch()
@@ -23,7 +23,7 @@ const HomePage = () => {
                     {
                         flights.map((flight, key) => {
                             return (
-                                <Card
+                                <FlightCard
                                     key={key}
                                     id={flight.id}
                                     from={flight.from}

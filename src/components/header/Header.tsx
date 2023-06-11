@@ -7,10 +7,11 @@ import { useAppSelector } from '../../app/hooks'
 const Header = () => {
   const booking = useAppSelector((state) => state.booking.seats)
   const username = useAppSelector((state) => state.auth.username)
+  const loggedIn = useAppSelector((state) => state.auth.loggedIn)
 
   useEffect(() => {
 
-  }, []) 
+  }, [])
 
   return (
     <>
@@ -29,11 +30,14 @@ const Header = () => {
               <Link to='/flights' className='text-sm font-semibold leading-6 text-gray-900'>
                 Flights
               </Link>
-              <Link to='/reservations' className='text-sm font-semibold leading-6 text-gray-900'>
-                Reservations
-              </Link>
+              {
+                loggedIn &&
+                <Link to='/reservations' className='text-sm font-semibold leading-6 text-gray-900'>
+                  Reservations
+                </Link>
+              }
             </div>
-            <div className='hidden lg:flex lg:flex-1 lg:justify-end gap-2'>
+            <div className='hidden lg:flex lg:flex-1 lg:justify-end gap-8'>
               <Link to='/cart' className='flex flex-row items-center text-sm font-semibold leading-6 text-gray-900'>
                 {booking.length} <AiOutlineShoppingCart size={'1.5em'} />
               </Link>

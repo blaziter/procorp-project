@@ -1,6 +1,6 @@
 import React from 'react'
 import { useAppSelector } from '../app/hooks'
-import Card from '../components/flightCard/FlightCard'
+import FlightCard from '../components/flightCard/FlightCard'
 import Container from '../components/container/Container'
 import Search from '../components/search/Search'
 
@@ -16,7 +16,7 @@ const FlightsPage = () => {
             {
               flights.map((flight, key) => {
                 return (
-                  <Card
+                  <FlightCard
                     key={key}
                     id={flight.id}
                     from={flight.from}

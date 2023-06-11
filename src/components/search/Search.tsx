@@ -17,10 +17,10 @@ const Search = () => {
         let max = 0
         flights.map((flight) => {
             if (flight.price! < min) {
-                min = flight.price
+                min = flight.price!
             }
             if (flight.price! > max) {
-                max = flight.price
+                max = flight.price!
             }
         })
         return [min, max]
