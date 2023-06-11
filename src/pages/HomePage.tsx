@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import Card from '../components/card/Card'
+import Card from '../components/flightCard/FlightCard'
 import Container from '../components/container/Container'
 import { useAppSelector, useAppDispatch } from '../app/hooks'
 import { takeSeat } from '../features/flightSlice'

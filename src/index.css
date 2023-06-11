@@ -17,6 +17,7 @@
 
 body, #root {
   min-height: 100vh;
+  background-color: #e5e7eb;
 }
 
 img,

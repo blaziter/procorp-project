@@ -27,7 +27,7 @@ const Card = (props: CardProps) => {
 
     return (
         <>
-            <div className='rounded-xl p-4 m-6 shadow-lg'>
+            <div className='p-4 m-6 shadow-xl bg-white'>
                 <div className="card-title">
                     <h1 className='text-2xl font-bold flex items-center justify-center'>
                         <TbPlaneInflight className='text-cyan-500' />

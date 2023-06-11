@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <>
-      <header>
+      <header className='bg-white py-2'>
         <Container className='mx-auto'>
           <nav className='flex justify-center items-center'>
             <div className='flex lg:flex-1'>
@@ -29,8 +29,8 @@ const Header = () => {
               <Link to='/flights' className='text-sm font-semibold leading-6 text-gray-900'>
                 Flights
               </Link>
-              <Link to='/' className='text-sm font-semibold leading-6 text-gray-900'>
-                Home
+              <Link to='/reservations' className='text-sm font-semibold leading-6 text-gray-900'>
+                Reservations
               </Link>
             </div>
             <div className='hidden lg:flex lg:flex-1 lg:justify-end gap-2'>
@@ -39,7 +39,7 @@ const Header = () => {
               </Link>
               {
                 username ? (
-                  <Link to='/user' className='text-sm font-semibold leading-6 text-gray-900'>
+                  <Link to='/reservations' className='text-sm font-semibold leading-6 text-gray-900'>
                     {username}
                   </Link>
                 ) : (

@@ -4,10 +4,8 @@ import Layout from './components/layout/Layout'
 import HomePage from './pages/HomePage'
 
 import './App.css'
-import ReservationPage from './pages/ReservationPage'
-import FlightsPage from './pages/FlightsPage'
 import Login from './components/login/Login'
-import CartPage from './pages/CartPage'
+import { BookingPage, CartPage, FlightsPage, ReservationPage } from './pages/Pages'
 
 const App = () => {
   return (
@@ -17,7 +15,10 @@ const App = () => {
         <Route path='login' element={<Login />} />
         <Route path='flights' element={<FlightsPage />} />
         <Route path='reservations' element={<ReservationPage />} />
-        <Route path='cart' element={<CartPage />} />
+        <Route path='cart'>
+          <Route path='' element={<CartPage />} />
+          <Route path='proceed' element={<BookingPage />} />
+        </Route>
         <Route path='*' element={<div>404</div>} />
       </Routes>
     </Layout>

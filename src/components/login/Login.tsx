@@ -34,8 +34,8 @@ const Login = () => {
   return (
     <>
       {logged && <Navigate to='/' />}
-      <Container className='mx-auto flex justify-center'>
-          <div className="flex rounded-xl flex-col justify-center items-center w-1/4 py-5 bg-gray-100 gap-8">
+      <Container className='mx-auto flex justify-center my-32'>
+          <div className="flex rounded-xl flex-col justify-center items-center w-1/4 py-5 gap-8 bg-white shadow-xl">
             <div className="input-animation flex-1">
               <input onChange={change} className={inputClass} ref={usernameRef} />
               <label className='login-placeholder absolute left-1/2 my-8 -mx-24 pointer-events-none select-none'>Username</label>
