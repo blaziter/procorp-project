@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import Container from '../container/Container'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { setLoggedIn, setRole } from '../../features/authSlice'
@@ -42,7 +42,7 @@ const Login = () => {
               <span className='login-title absolute -mx-52 pointer-events-none select-none'>Username</span>
             </div>
             <div className="input-animation flex-1">
-              <input onChange={change} className={inputClass} ref={passwordRef} />
+              <input onChange={change} type='password' className={inputClass} ref={passwordRef} />
               <label className='login-placeholder absolute left-1/2 my-8 -mx-24 pointer-events-none select-none'>Password</label>
               <span className='login-title absolute -mx-52 pointer-events-none select-none'>Password</span>
             </div>

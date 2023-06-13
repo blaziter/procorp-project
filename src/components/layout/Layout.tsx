@@ -1,4 +1,3 @@
-import React from 'react'
 import Header from '../header/Header'
 import Footer from '../footer/Footer'
 import Props from '../../types/Props'
@@ -10,9 +9,11 @@ const Layout = (props: LayoutProps) => {
     return (
         <>
             <Header />
-            {
-                props.children
-            }
+            <div className='min-h-screen'>
+                {
+                    props.children
+                }
+            </div>
             <Footer />
         </>
     )

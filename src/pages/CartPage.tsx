@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAppSelector } from '../app/hooks'
-import BookingCard from '../components/bookingCard/BookingCard'
 import { FlightsState } from '../features/flightSlice'
 import FlightCard from '../components/flightCard/FlightCard'
 import Container from '../components/container/Container'
@@ -20,14 +19,22 @@ const CartPage = () => {
       seats.push(flights[flights.findIndex(flight => flight.id == book.flightId)]!)
     })
     setFilteredFlights([...new Set(seats)])
-    console.log(filteredFlights)
   }, [booked])
 
   return (
     <>
       <Container className='mx-auto'>
-        <div className='bg-white shadow-xl p-8 my-8'>
-          <h1 className='text-center'>My flights</h1>
+        <div>
+          <div className='bg-white shadow-xl p-8 mt-8 mb-4 grid grid-rows-2'>
+            <h1 className='text-center'>My flights</h1>
+            {
+              loggedIn ?
+                booked.length > 0 &&
+                <Link to='proceed' className='bg-cyan-500 p-2 rounded hover:bg-cyan-300 transition-all float-right justify-self-end'>Proceed</Link>
+                :
+                <Link to='/login' className='bg-cyan-500 p-2 rounded hover:bg-cyan-300 transition-all float-right justify-self-end'>Proceed</Link>
+            }
+          </div>
           <div className='p-4'>
             <div className='grid grid-cols-2'>
               {
@@ -49,13 +56,6 @@ const CartPage = () => {
                 })
               }
             </div>
-            {
-              loggedIn ?
-                booked.length > 0 &&
-                <Link to='proceed' className='bg-cyan-500 p-2 rounded hover:bg-cyan-300 transition-all float-right'>Proceed</Link>
-                :
-                <Link to='/login' className='bg-cyan-500 p-2 rounded hover:bg-cyan-300 transition-all float-right'>Proceed</Link>
-            }
           </div>
         </div>
       </Container>

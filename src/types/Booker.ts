@@ -1,11 +1,8 @@
-export default interface Booker {
-    id?: number,
-    createdAt?: string,
-    name?: string,
-    surname?: string,
-    state?: string,
-    gender?: string,
+import Reservation from "./Reservation";
+
+export default interface Booker extends Reservation {
     birthday?: string,
+    state?: string,
     email?: string,
     phone?: string,
     street?: string,

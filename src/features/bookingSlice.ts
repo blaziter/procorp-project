@@ -19,14 +19,17 @@ export const bookingSlice = createSlice({
       temp.push(action.payload)
       state.seats = temp
     },
+    removeAllSeats: (state, action: PayloadAction<void>) => {
+      state.seats = []
+    },
     removeSeat: (state, action: PayloadAction<Booking>) => {
       const result = [...state.seats]
       result.splice(current(state.seats).findIndex(seat => seat.seatId == action.payload.seatId && seat.flightId == action.payload.flightId), 1)
       return { ...state, seats: result }
-    }
+    },
   },
 })
 
-export const { addSeat, removeSeat } = bookingSlice.actions
+export const { addSeat, removeAllSeats, removeSeat } = bookingSlice.actions
 
 export default bookingSlice.reducer

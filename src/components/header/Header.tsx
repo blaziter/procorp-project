@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Container from '../container/Container'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
@@ -8,10 +7,6 @@ const Header = () => {
   const booking = useAppSelector((state) => state.booking.seats)
   const username = useAppSelector((state) => state.auth.username)
   const loggedIn = useAppSelector((state) => state.auth.loggedIn)
-
-  useEffect(() => {
-
-  }, [])
 
   return (
     <>

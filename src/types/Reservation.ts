@@ -1,12 +1,11 @@
 export default interface Reservation {
     id?: number,
+    createdAt?: string,
     flightId?: number,
     seatId?: number,
-    createdAt?: string,
     adult?: boolean,
     name?: string,
     surname?: string,
-    state?: string,
+    citizenship?: string,
     gender?: string,
-    birthday?: string,
 }

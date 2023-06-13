@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useAppSelector } from '../../app/hooks'
+import { DateNow } from '../../hooks/DateNow'
 
 const Search = () => {
     const flights = useAppSelector((state) => state.flights)
@@ -62,7 +63,7 @@ const Search = () => {
                 </div>
                 <div className='flex flex-col'>
                     <label>When</label>
-                    <input type="date" defaultValue={new Date().toISOString().split('T')[0]} ref={dateRef} />
+                    <input type="date" defaultValue={DateNow()} ref={dateRef} />
                 </div>
                 <div className='flex flex-col'>
                     <label>Price</label>

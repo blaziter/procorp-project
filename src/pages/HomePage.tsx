@@ -1,21 +1,9 @@
-import React, { useEffect } from 'react'
 import Container from '../components/container/Container'
-import { useAppSelector, useAppDispatch } from '../app/hooks'
-import { takeSeat } from '../features/flightSlice'
+import { useAppSelector } from '../app/hooks'
 import FlightCard from '../components/flightCard/FlightCard'
 
 const HomePage = () => {
-    const dispatch = useAppDispatch()
     const flights = useAppSelector((state) => state.flights)
-
-    const click = () => {
-        dispatch(takeSeat([1, 1, true]))
-    }
-
-    useEffect(() => {
-        click()
-    }, [])
-
     return (
         <>
             <Container className='mx-auto'>

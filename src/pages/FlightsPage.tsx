@@ -1,4 +1,3 @@
-import React from 'react'
 import { useAppSelector } from '../app/hooks'
 import FlightCard from '../components/flightCard/FlightCard'
 import Container from '../components/container/Container'

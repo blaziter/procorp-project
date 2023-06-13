@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useState } from 'react'
 import FlightsProps from '../../types/Flights'
 import { AiOutlineClockCircle } from 'react-icons/ai'
 import { TbPlaneArrival, TbPlaneDeparture, TbPlaneInflight } from 'react-icons/tb'
@@ -46,8 +46,8 @@ const FlightCard = (props: CardProps) => {
                                             type="checkbox"
                                             name={seat.number}
                                             className='mr-2 w-10 h-10 accent-cyan-500 checked:text-blue:500 hover:cursor-pointer disabled:cursor-default'
-                                            disabled={seat.available}
-                                            defaultChecked={booked.map(book => book.flightId === props.id && book.seatId === seat.id).includes(true) ? true : seat.available ? true : undefined}
+                                            disabled={!seat.available}
+                                            defaultChecked={booked.map(book => book.flightId === props.id && book.seatId === seat.id).includes(true) ? true : !seat.available ? true : undefined}
                                         />
                                     </div>
                                 )

@@ -1,19 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
+import Reservation from '../types/Reservation'
 
-export type reservationState = {
-    
-}
+export type reservationState = Reservation[]
 
-const initialState: reservationState = {
-    seats: []
-}
+
+const initialState: reservationState = [
+
+]
 
 export const reservationSlice = createSlice({
     name: 'reservation',
     initialState,
     reducers: {
-        addReservation: (state, action: PayloadAction<String>) => {
+        addReservation: (state, action: PayloadAction<Reservation[]>) => {
+            action.payload.map(reservation => state.push(reservation))
         },
     },
 })
