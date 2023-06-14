@@ -10,7 +10,8 @@ const ReservationPage = () => {
   return (
     <>
       <Container className='mx-auto'>
-        <div className="grid grid-cols-2">
+        <h1 className='bg-white shadow-xl p-8 mt-8 mb-4 text-center font-semibold leading-6 text-gray-900'>My Reservations</h1>
+        <div className="grid lg:grid-cols-2">
           {
             reservations.map((reservation, key) => {
               const bookedSeats: Seat[] = []

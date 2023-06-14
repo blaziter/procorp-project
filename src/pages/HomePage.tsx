@@ -7,7 +7,7 @@ const HomePage = () => {
     return (
         <>
             <Container className='mx-auto'>
-                <div className='grid grid-cols-2'>
+                <div className='lg:grid lg:grid-cols-2'>
                     {
                         flights.map((flight, key) => {
                             return (

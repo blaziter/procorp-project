@@ -60,8 +60,8 @@ const BookingPage = () => {
     <>
       {redir && <Navigate to={'/reservations'} />}
       <Container className='mx-auto'>
-        <div className='bg-white shadow-xl p-8 mt-8 mb-4 grid grid-rows-2'>
-          <h1 className='text-center'>My flights</h1>
+        <div className='bg-white shadow-xl p-8 mt-8 mb-4 grid grid-rows-2 font-semibold leading-6'>
+          <h1 className='text-center text-gray-900'>My flights</h1>
           {
             valid == false && (
               <h2 className='text-center text-red-600'>Missing values!</h2>
@@ -76,7 +76,7 @@ const BookingPage = () => {
           }
         </div>
         <form ref={formRef} onSubmit={(e) => reserveFlights(e)}>
-          <div className='grid grid-cols-2 py-8'>
+          <div className='grid lg:grid-cols-2 py-8'>
             {
               booked.map((book, key) => {
                 return <BookingCard

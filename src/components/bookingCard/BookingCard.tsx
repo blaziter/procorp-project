@@ -46,9 +46,9 @@ const BookingCard = (props: BookingProps) => {
 
   return (
     <>
-      <div className='bg-white p-4'>
+      <div className='bg-white p-4 font-semibold leading-6 text-gray-900'>
         <div className='p-4 flex flex-col gap-4'>
-          {props.type == 'booker' && <h1 className='text-2xl font-bold'>Booker</h1>}
+          {props.type == 'booker' && <h1 className='text-2xl font-semibold leading-6 text-gray-900'>Booker</h1>}
           {
             !props.type && (
               <div className='flex items-center'>
@@ -58,7 +58,7 @@ const BookingCard = (props: BookingProps) => {
           }
         </div>
         <div className='grid grid-cols-2 p-4 gap-4'>
-          <div className='grid grid-rows-2'>
+          <div className='grid grid-rows-2 '>
             Name
             <input className='p-2 border-solid border-2 border-cyan-600' type="text" name='name' placeholder='name' onChange={updateState} />
           </div>

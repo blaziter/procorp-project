@@ -34,8 +34,8 @@ const FlightCard = (props: CardProps) => {
                         {props.from} - {props.to}
                     </h1>
                 </div>
-                <div className='grid grid-cols-2'>
-                    <div className='grid grid-cols-2 grid-rows-2'>
+                <div className='grid lg:grid-cols-2 gap-4 my-4'>
+                    <div className='grid grid-cols-2 grid-rows-2 gap-4'>
                         {
                             props.seats?.map((seat, key) => {
                                 return (
@@ -54,7 +54,7 @@ const FlightCard = (props: CardProps) => {
                             })
                         }
                     </div>
-                    <div className="grid grid-rows-2 grid-cols-2">
+                    <div className="grid grid-rows-2 grid-cols-2 mx-12 lg:mx-0">
                         <div className='text-gray-600 flex flex-col'>
                             <TbPlaneDeparture size={'1.5em'} className='text-cyan-500' />
                             <p>Departure:</p>

@@ -25,7 +25,7 @@ const CartPage = () => {
     <>
       <Container className='mx-auto'>
         <div>
-          <div className='bg-white shadow-xl p-8 mt-8 mb-4 grid grid-rows-2'>
+          <div className='bg-white shadow-xl p-8 mt-8 mb-4 grid grid-rows-2 font-semibold leading-6 text-gray-900'>
             <h1 className='text-center'>My flights</h1>
             {
               loggedIn ?
@@ -36,7 +36,7 @@ const CartPage = () => {
             }
           </div>
           <div className='p-4'>
-            <div className='grid grid-cols-2'>
+            <div className='lg:grid lg:grid-cols-2'>
               {
                 filteredFlights.map((flight, key) => {
                   const bookedSeats = booked.filter(book => book.flightId == flight.id).map(book => book.seatId).map(seat => flight.seats?.filter(flightSeat => flightSeat.id == seat))
