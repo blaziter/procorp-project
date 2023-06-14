@@ -1,9 +1,12 @@
 version: "3.4"
 services:
- vite_docker:
-   image: node:alpine
-   container_name: vite_docker
+ app:
+   image: procorp_docker
+   container_name: procorp_docker
    entrypoint: /bin/sh
+   build:
+      context: .
+      target: builder
    ports:
      - 8000:8000
    working_dir: /src/app
